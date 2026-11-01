@@ -10,6 +10,10 @@
 <meta property="og:image" content="https://joaopraiah.github.io/felicia/hero.jpg">
 <meta name="theme-color" content="#FFF6EC">
 <link rel="preload" as="image" href="hero.jpg">
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1954845261964856');fbq('track','PageView');
+</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html{background:#FFF6EC}
@@ -87,7 +91,12 @@ footer{text-align:center;font-size:12px;color:#A08D7D;margin:26px 0 8px}
 <div class="fixo"><a class="btn" href="https://chat.whatsapp.com/Fc4kPWMRv0J2omxNdMokDm">ENTRAR NO GRUPO GRÁTIS 👉</a></div>
 
 <script>
-function copiar(b){var t="https://chat.whatsapp.com/Fc4kPWMRv0J2omxNdMokDm";
+var leadEnviado=false;
+function lead(){if(leadEnviado)return;leadEnviado=true;try{fbq('track','Lead',{content_name:'Grupo Felicia Ofertas'});}catch(e){}}
+document.querySelectorAll('a[href*="chat.whatsapp.com"]').forEach(function(a){
+  a.addEventListener('click',function(ev){lead();var h=a.href;ev.preventDefault();setTimeout(function(){location.href=h;},350);});
+});
+function copiar(b){lead();var t="https://chat.whatsapp.com/Fc4kPWMRv0J2omxNdMokDm";
 function ok(){b.textContent="Link copiado ✅ Agora cole no WhatsApp";}
 function velho(){var i=document.createElement("textarea");i.value=t;document.body.appendChild(i);i.select();try{document.execCommand("copy");ok();}catch(e){}i.remove();}
 if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,velho);}else{velho();}}
